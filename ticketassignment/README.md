@@ -14,8 +14,8 @@ pnpm add -g eas-cli
 ## 🚀 Getting Started
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/Sparks1998/CaseStudy.git
+cd CaseStudy/ticketassignment
 ```
 
 ### 2. Install Dependencies

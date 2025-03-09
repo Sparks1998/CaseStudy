@@ -40,10 +40,10 @@ npm install -g @nestjs/cli
 ### Installation Steps
 ```bash
 # Clone the repository
-git clone https://github.com/
+git clone https://github.com/Sparks1998/CaseStudy.git
 
 # Navigate to the project directory
-cd ticketassignment_backend
+cd CaseStudy/ticketassignment_backend
 ```
 ### Install dependencies
 
