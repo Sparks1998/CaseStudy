@@ -1,0 +1,105 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateEventInput {
+  eventDate: String!
+  eventName: String!
+}
+
+input CreateOrderInput {
+  id: Int!
+  purchasedAmount: Int!
+}
+
+input CreateTicketInput {
+  eventId: Int
+  quantity: Int!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Events {
+  createdAt: DateTime!
+  eventDate: DateTime!
+  eventName: String!
+  id: Int!
+  tickets: Tickets
+  updatedAt: DateTime!
+}
+
+input LoginInput {
+  """Email field"""
+  email: String!
+
+  """Password field"""
+  password: String!
+  rememberToken: Boolean!
+}
+
+type Mutation {
+  createEvent(createEventInput: CreateEventInput!): Events!
+  createTicket(createTicketInput: CreateTicketInput!): Tickets!
+  login(userData: LoginInput!): Users!
+  purchase(createOrderInput: CreateOrderInput!): Orders!
+  removeEvent(id: Int!): String!
+  removeTicket(id: Int!): String!
+  updateEvent(updateEventInput: UpdateEventInput!): Events!
+  updateTicket(updateTicketInput: UpdateTicketInput!): Tickets!
+}
+
+enum OrderDirection {
+  ASC
+  DESC
+}
+
+input OrderInput {
+  direction: OrderDirection!
+  field: String!
+}
+
+type Orders {
+  createdAt: DateTime!
+  id: Int!
+  purchasedAmount: Int!
+  ticket: Tickets!
+  updatedAt: DateTime!
+  user: Users!
+}
+
+type Query {
+  event(id: Int!): Events!
+  events(order: OrderInput): [Events!]!
+  orders: [Orders!]!
+}
+
+type Tickets {
+  createdAt: DateTime!
+  event: Events!
+  id: Int!
+  orders: [Orders!]!
+  quantity: Int!
+  updatedAt: DateTime!
+}
+
+input UpdateEventInput {
+  eventDate: String
+  eventName: String
+  id: Int!
+}
+
+input UpdateTicketInput {
+  eventId: Int
+  id: Int!
+  quantity: Int
+}
+
+type Users {
+  email: String!
+  firstName: String!
+  id: Int!
+  lastName: String!
+}
